@@ -1,12 +1,12 @@
 {
-  "name": "warp",
+  "name": "warp-framework",
   "version": "0.0.1",
-  "description": "warp is a game framework built on top of the space-dud project.",
+  "description": "warp-framework is a game framework built on top of the space-dud project.",
   "main": "index.js",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MMazzocchi/warp.git"
+    "url": "git+https://github.com/MMazzocchi/warp-framework.git"
   },
   "author": "Max Mazzocchi <maxwell.mazzocchi@gmail.com>",
   "license": "MIT",
