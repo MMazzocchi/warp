@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "description": "warp-framework is a game framework built on top of the space-dud project.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "prepare": "npm run build",
+    "start": "node index.js",
+    "build": "bash ./scripts/build.sh"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MMazzocchi/warp-framework.git"
@@ -11,11 +15,7 @@
   "author": "Max Mazzocchi <maxwell.mazzocchi@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "space-dud": "^2.6.0"
-  },
-  "scripts": {
-    "prepare": "npm run build",
-    "start": "node index.js",
-    "build": "bash ./scripts/build.sh"
+    "space-dud": "^2.6.0",
+    "debug": "^2.6.8"
   }
 }

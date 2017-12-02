@@ -1,5 +1,6 @@
 var EventEmitter = require('events');
 var SpaceDud = require('space-dud');
+var debug = require('debug')('warp-framework:Game');
 
 var Game = function(http) {
   var that = {};
@@ -9,6 +10,8 @@ var Game = function(http) {
   var last_update = new Date();
   var clock = new EventEmitter();
   var space_dud = new SpaceDud(http);
+
+  debug('Created a new Game.');
 
   // Private methods
   function tick() {
@@ -32,6 +35,8 @@ var Game = function(http) {
 
   // Public methods
   that.addRoom = function(room) {
+    debug('Added a new room.');
+
     clock.on('tick', room.tick);
   };
 

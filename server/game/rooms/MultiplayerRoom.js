@@ -1,9 +1,12 @@
 var Room = require('./Room.js');
+var debug = require('debug')('warp-framework:MultiplayerRoom');
 
 const DEFAULT_UPDATE_INTERVAL = 33;
 
 var MultiplayerRoom = function(update_interval) {
   var that = new Room();
+
+  debug('Created new MultiplayerRoom.');
 
   if(update_interval === undefined) {
     update_interval = DEFAULT_UPDATE_INTERVAL;
