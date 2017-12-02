@@ -12,5 +12,10 @@
   "license": "MIT",
   "dependencies": {
     "space-dud": "^2.6.0"
+  },
+  "scripts": {
+    "prepare": "npm run build",
+    "start": "node index.js",
+    "build": "bash ./scripts/build.sh"
   }
 }
