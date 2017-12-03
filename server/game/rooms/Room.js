@@ -46,6 +46,18 @@ var Room = function() {
     return player_list;
   };
 
+  that.broadcast = function(data) {
+    for(var i = 0; i < player_list.length; i++) {
+      player_list[i].sendEventToConsumers(data);
+    }
+  };
+
+  that.sendToPlayer = function(id, data) {
+    if(player_hash[id] !== undefined) {
+      player_hash[id].sendEventToConsumers(data);
+    }
+  };
+
   return that;
 };
 
