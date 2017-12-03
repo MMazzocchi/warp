@@ -6,9 +6,44 @@ var Room = function() {
 
   debug('Created new Room.');
 
+  // Fields
+  var player_list = [];
+  var player_hash = {};
+
   // Public methods
-  that.tick = function(delta, now) {
-    that.emit('tick', delta, now);
+  that.addPlayer = function(player) {
+    var id = okayer.getId();
+    debug('Adding player '+id);
+
+    player_list.push(player);
+    player_hash[id] = player;
+
+    player.once('disconnect', removePlayer);
+    that.emit('player_added', player);
+  };
+
+  that.removePlayer = function(player) {
+    var id = player.getId();
+    debug('Removing player '+id+'.');
+
+    if(player_hash[id] !== undefined) {
+      var index = player_list.indexOf(player);
+      player_list.splice(index, 1);
+      player_hash[id] = undefined;
+
+    } else {
+      debug('Player '+id+' did not exist!');
+    }
+
+    that.emit('player_removed', player);
+  };
+
+  that.getPlayer = function(id) {
+    return player_hash[id];
+  };
+
+  that.getPlayers = function() {
+    return player_list;
   };
 
   return that;
