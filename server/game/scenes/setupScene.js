@@ -1,7 +1,7 @@
 var debug = require('debug')('warp-framework:Scene');
 
 var setupScene = async function(name, player) {
-  debug('Setting up a Scene.');
+  debug('Setting up a '+name+' Scene.');
 
   function createScenePacket() { 
     var data = {
