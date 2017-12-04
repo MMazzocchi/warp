@@ -12,7 +12,7 @@ var Room = function() {
 
   // Public methods
   that.addPlayer = function(player) {
-    var id = okayer.getId();
+    var id = player.getId();
     debug('Adding player '+id);
 
     player_list.push(player);
