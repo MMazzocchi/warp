@@ -1,4 +1,4 @@
-var setupScene = require('../Scene.js');
+var setupScene = require('../setupScene.js');
 var Controller = require('./Controller.js');
 
 var ControllerSetupScene = function(player, ...event_types) {

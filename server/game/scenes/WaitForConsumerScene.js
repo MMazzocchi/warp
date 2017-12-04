@@ -1,4 +1,4 @@
-var setupScene = require('./Scene.js');
+var setupScene = require('./setupScene.js');
 var debug = require('debug')('warp-framework:WaitForConsumerScene');
 
 var WaitForConsumerScene = function(player) {
