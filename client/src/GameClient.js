@@ -1,3 +1,4 @@
+var SpaceDud = require('../lib/space-dud-client.js');
 var setImmediate = require('timers').setImmediate;
 
 var GameClient = function() {
@@ -6,7 +7,7 @@ var GameClient = function() {
   // Public functions
   that.useDisplayConnection = function(player_id) {
 
-    var client = new DisplayConnection();
+    var client = new SpaceDud.DisplayConnection();
     setImmediate(function() {
       client.selectPlayer(player_id);
     });
