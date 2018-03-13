@@ -18,7 +18,9 @@ var Room = function() {
     player_list.push(player);
     player_hash[id] = player;
 
-    player.once('disconnect', that.removePlayer);
+    player.once('disconnect', function() {
+      that.removePlayer(player);
+    });
     that.emit('player_added', player);
   };
 
