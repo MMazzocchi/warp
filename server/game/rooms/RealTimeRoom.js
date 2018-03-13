@@ -12,7 +12,7 @@ function static_scope() {
   var clock_interval = setInterval(clockTick, DEFAULT_UPDATE_INTERVAL);
 
   var RealTimeRoom = function() {
-    var that = Room();
+    var that = new Room();
 
     clock.on('tick', function(date) {
       that.emit('tick', date);
