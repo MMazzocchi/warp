@@ -25,7 +25,6 @@ var setupScene = async function(name, player) {
   };
 
   setImmediate(broadcastScenePacket);
-  player.on('consumer_added', sendScenePacket);
 
   return Promise.resolve();
 };
