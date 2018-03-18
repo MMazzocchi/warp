@@ -1,4 +1,4 @@
-var SpaceDud = require('space-dud/client/src/SpaceDudClient.js');
+var SpaceDud = require('space-dud/client/dist/space-dud-client.js');
 var setImmediate = require('timers').setImmediate;
 
 var GameClient = function() {

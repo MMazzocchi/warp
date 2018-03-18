@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
+var path = require('path');
+var derequire = require('gulp-derequire');
 
 const CLIENT_SRC = './client/src/';
 const CLIENT_DIST = './client/dist/';
@@ -13,10 +15,13 @@ function buildFile(in_file, out_dir, new_filename) {
     filename = tokens[tokens.length - 1];
   }
 
+  var name = path.basename(filename, ".js");
+
   return new Promise(function(resolve) {
-    var stream = browserify(in_file)
+    var stream = browserify(in_file, {standalone: name})
       .bundle()
       .pipe(source(filename))
+      .pipe(derequire())
       .pipe(gulp.dest(out_dir));
 
     stream.on('end', function() {
