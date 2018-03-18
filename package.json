@@ -15,13 +15,12 @@
   "author": "Max Mazzocchi <maxwell.mazzocchi@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "space-dud": "^2.7.4",
+    "space-dud": "^2.7.5",
     "debug": "^2.6.8"
   },
   "devDependencies": {
     "browserify": "^16.1.1",
     "gulp": "^4.0.0",
-    "gulp-derequire": "^2.1.0",
     "vinyl-source-stream": "^2.0.0"
   }
 }
