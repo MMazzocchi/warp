@@ -15,7 +15,7 @@
   "author": "Max Mazzocchi <maxwell.mazzocchi@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "space-dud": "^2.7.2",
+    "space-dud": "^2.7.4",
     "debug": "^2.6.8"
   },
   "devDependencies": {
