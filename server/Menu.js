@@ -1,16 +1,31 @@
-var Menu = function(options) {
+var Menu = function(name, options, player) {
   var that = {};
 
   // Fields
   var selection = 0;
+  var menu_title = name + "_menu";
 
-  // Public methods
-  that.next = function() {
-    selection = (selection + 1) % options.length;
+  // Private methods
+  function sendSelectionData() {
+    var data = {
+      'event_type': menu_title,
+      'selection': menu.getSelectionIndex()
+    };
+
+    player.sendEventToConsumers(data);
   };
 
-  that.prev = function() {
-    selection = (selection + (options.length - 1)) % options.length;
+  // Public methods
+  that.next = function(value) {
+    if((value === undefined) || (value === 1)) {
+      selection = (selection + 1) % options.length;
+    }
+  };
+
+  that.prev = function(value) {
+    if((value === undefined) || (value === 1)) {
+      selection = (selection + (options.length - 1)) % options.length;
+    }
   };
 
   that.getSelection = function() {
